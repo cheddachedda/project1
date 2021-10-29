@@ -1,0 +1,31 @@
+<table>
+
+  <tr>
+    <th>Team</th>
+    <th>G</th>
+    <th>W</th>
+    <th>L</th>
+    <th>D</th>
+    <th>F</th>
+    <th>A</th>
+    <th>%</th>
+    <th>W%</th>
+  </tr>
+
+
+  <% teams = @teams || Team.where(id: params[:id]) %>
+  <% teams.each do |team| %>
+    <tr>
+      <td><%= link_to team.name, team_path(team.id) %></td>
+      <td><%= team.games_played %></td>
+      <td><%= team.wins %></td>
+      <td><%= team.losses %></td>
+      <td><%= team.draws %></td>
+      <td><%= team.goals_for %></td>
+      <td><%= team.goals_against %></td>
+      <td><%= team.goal_percentage %></td>
+      <td><%= team.win_percentage %></td>
+    </tr>
+  <% end %>
+
+</table>
