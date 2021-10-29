@@ -46,3 +46,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Web Scraping
 gem 'httparty'
 gem 'nokogiri'
+
+group :production do
+  # For Heroku deployment
+  gem 'rails_12factor'
+end
