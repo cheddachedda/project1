@@ -7,10 +7,13 @@
     <% end %>
   </tr>
 
-  <tr>
-    <% locals[:model].column_names.each do |col| %>
-      <td><%= @team[col] %></td>
-    <% end %>
-  </tr>
+  <% models = params[:id] ? locals[:model].where(id: params[:id]) : locals[:model].all %>
+  <% models.each do |model| %>
+    <tr>
+      <% locals[:model].column_names.each do |col| %>
+        <td><%= model[col] %></td>
+      <% end %>
+    </tr>
+  <% end %>
 
 </table>
