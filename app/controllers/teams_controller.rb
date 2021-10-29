@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   def index
-    @teams = Team.all
+    @teams = Team.all.sort_by{ |t| t.win_percentage }.reverse
   end
 
   def new
