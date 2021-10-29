@@ -8,11 +8,11 @@
     <th>Path</th>
   </tr>
 
-  <tr>
-    <% @models.each do |model| %>
+  <% @models.each do |model| %>
+    <tr>
       <td><%= model %></td>
       <td><%= link_to "/#{model.downcase}s", "/#{model.downcase}s" %></td>
-    <% end %>
-  </tr>
+    </tr>
+  <% end %>
 
 </table>
