@@ -1,6 +1,5 @@
 require 'httparty'
 require 'nokogiri'
-require 'pry'
 
 Fixture.destroy_all
 Team.destroy_all
