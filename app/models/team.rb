@@ -78,11 +78,11 @@ class Team < ApplicationRecord
   end
 
   def goal_percentage
-    ((self.goals_for / self.goals_against.to_f) * 100).round 2
+    ((self.goals_for / self.goals_against.to_f) * 100).round 1
   end
 
   def win_percentage
-    ((self.wins + self.draws/2.0) / self.games_played * 100).round 2
+    ((self.wins + self.draws/2.0) / self.games_played * 100).round 1
   end
 
   def rank
