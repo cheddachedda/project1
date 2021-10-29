@@ -46,10 +46,10 @@ def scrape_fixtures
           status: columns[1],
           venue: columns[2],
           home: columns[3],
-          home_score: columns[4],
+          home_score: columns[4].to_i,
           # columns[5] = 'vs.'
           away: columns[6],
-          away_score: columns[7],
+          away_score: columns[7].to_i,
         }
       end
     end
