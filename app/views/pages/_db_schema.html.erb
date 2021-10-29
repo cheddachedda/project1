@@ -1,0 +1,16 @@
+<h3>Database Schema:</h3>
+<table>
+
+  <tr>
+    <% locals[:model].column_names.each do |col| %>
+      <th><%= col %></th>
+    <% end %>
+  </tr>
+
+  <tr>
+    <% locals[:model].column_names.each do |col| %>
+      <td><%= @team[col] %></td>
+    <% end %>
+  </tr>
+
+</table>
