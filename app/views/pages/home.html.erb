@@ -1,0 +1,18 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+<table>
+
+  <tr>
+    <th>Model</th>
+    <th>Path</th>
+  </tr>
+
+  <tr>
+    <% @models.each do |model| %>
+      <td><%= model %></td>
+      <td><%= link_to "/#{model.downcase}s", "/#{model.downcase}s" %></td>
+    <% end %>
+  </tr>
+
+</table>
