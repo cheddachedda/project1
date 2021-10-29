@@ -1,14 +1,9 @@
 require 'httparty'
 require 'nokogiri'
+require 'pry'
 
-#################################### TEAMS #####################################
-
+Fixture.destroy_all
 Team.destroy_all
-Team.create :name => 'Netball Regretball'
-puts "#{ Team.count } #{ 'team'.pluralize Team.count } created"
-
-
-################################### FIXTURES ###################################
 
 def scrape_fixtures
   url = 'https://citysidesports.com/fixtures.php?getcomp=9&div=2746'
@@ -57,4 +52,35 @@ def scrape_fixtures
   fixtures
 end
 
-scrape_fixtures
+scrape_fixtures.each do |fixture|
+  new_fixture = Fixture.create fixture
+  puts "Created Fixture: #{ new_fixture[:home] } v #{ new_fixture[:away] }"
+
+  home_team = Team.find_by(name: fixture[:home])
+  if home_team.nil?
+    home_team = Team.create :name => fixture[:home]
+    puts "Created Team: #{ home_team[:name] }"
+  end
+
+  away_team = Team.find_by(name: fixture[:away])
+  if away_team.nil? && fixture[:status] != "BYE"
+    away_team = Team.create :name => fixture[:away]
+    puts "Created Team: #{ away_team[:name] }"
+  end
+
+  home_team.fixtures << new_fixture
+  puts "Associated Fixture: R#{ new_fixture[:round] } to Team: #{ home_team[:name] }"
+
+  unless away_team.nil?
+    away_team.fixtures << new_fixture
+    puts "Associated Fixture: R#{ new_fixture[:round] } to Team: #{ away_team[:name] }"
+  end
+end
+
+puts "#{ Fixture.count } #{ 'fixture'.pluralize Fixture.count } created"
+puts "#{ Team.count } #{ 'team'.pluralize Team.count } created"
+
+# rails db:drop
+# rails db:create
+# rails db:migrate
+# rails db:seed
