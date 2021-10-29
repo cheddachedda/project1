@@ -30,6 +30,7 @@ body {
 
 a {
   color: #FF7A64;
+  text-decoration: none;
 }
 
 nav {
@@ -48,10 +49,9 @@ nav {
   color: #242430;
   font-weight: bold;
   padding: 0.5rem 1.5rem;
-  text-decoration: none;
 }
 
-.nav-container > a:hover, a:active {
+.nav-container > a:hover, .nav-container > a:active {
   background-color: #FFEF6B;
 }
 
