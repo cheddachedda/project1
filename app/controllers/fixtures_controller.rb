@@ -9,6 +9,9 @@ class FixturesController < ApplicationController
   def create
   end
 
+  def round
+  end
+
   def show
   end
 
