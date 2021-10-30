@@ -1,5 +1,5 @@
 <div class="fixtures-nav">
-  <% Fixture.pluck(:round).uniq.each do |round| %>
+  <% get_all_rounds.each do |round| %>
     <a
       href="<%= round_path(round) %>"
       class="<%= "selected" if round == params[:round] %>">
