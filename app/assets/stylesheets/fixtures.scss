@@ -10,14 +10,19 @@
 }
 
 .fixtures-nav > button {
-  background-color: #FFEF6B;
+  background-color: #DADADA;
   border: none;
   border-radius: 0.2rem;
+  color: #242430;
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
   height: 2rem;
   width: 2.5rem;
+}
+
+.fixtures-nav > .current {
+  background-color: #FFEF6B;
 }
 
 .fixtures-nav > button:hover, .fixtures-nav > button:active {
