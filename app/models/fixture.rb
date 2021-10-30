@@ -24,4 +24,12 @@ class Fixture < ApplicationRecord
   def draw?
     self.home_score == self.away_score
   end
+
+  def win? team
+    team == self.winner
+  end
+
+  def loss? team
+    team == self.loser
+  end
 end
