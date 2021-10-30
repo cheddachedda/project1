@@ -6,23 +6,27 @@ class Fixture < ApplicationRecord
   end
 
   def winner
-    if self.home_score > self.away_score
-      Team.find_by name: self.home
-    elsif self.away_score > self.home_score
-      Team.find_by name: self.away
+    if self.status == 'COMPLETE'
+      if self.home_score > self.away_score
+        Team.find_by name: self.home
+      elsif self.away_score > self.home_score
+        Team.find_by name: self.away
+      end
     end
   end
 
   def loser
-    if self.home_score < self.away_score
-      Team.find_by name: self.home
-    elsif self.away_score < self.home_score
-      Team.find_by name: self.away
+    if self.status == 'COMPLETE'
+      if self.home_score < self.away_score
+        Team.find_by name: self.home
+      elsif self.away_score < self.home_score
+        Team.find_by name: self.away
+      end
     end
   end
 
   def draw?
-    self.home_score == self.away_score && self.status == 'COMPLETED'
+    self.home_score == self.away_score && self.status == 'COMPLETE'
   end
 
   def win? team
