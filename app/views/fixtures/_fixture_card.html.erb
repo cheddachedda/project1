@@ -8,7 +8,7 @@
 
       <thead>
         <tr>
-          <th colspan="3">
+          <th colspan="4">
             <%= fixture.date %> • <%= fixture.status %> • <%= fixture.venue %>
           </th>
         </tr>
@@ -19,12 +19,14 @@
         <tr>
           <td><%= link_to home.name, team_path(home.id) %></td>
           <td><%= home.record %></td>
+          <td><%= home.rank.ordinalize %></td>
           <td><%= fixture.home_score %></td>
         </tr>
 
         <tr>
           <td><%= link_to away.name, team_path(away.id) %></td>
           <td><%= away.record %></td>
+          <td><%= away.rank.ordinalize %></td>
           <td><%= fixture.away_score %></td>
         </tr>
 
@@ -34,7 +36,7 @@
 
         <tfoot>
           <tr>
-            <td colspan="3"><%= link_to '>> View Fixture' ,fixture_path(fixture.round, fixture.id) %></td>
+            <td colspan="4"><%= link_to '>> View Fixture' ,fixture_path(fixture.round, fixture.id) %></td>
           </tr>
         </tfoot>
 
