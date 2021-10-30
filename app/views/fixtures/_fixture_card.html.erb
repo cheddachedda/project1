@@ -50,7 +50,7 @@
 
       <tbody>
         <tr>
-          <td><%= home.name %></td>
+          <td><%= link_to home.name, team_path(home.id) %></td>
           <td><%= home.record %></td>
         </tr>
       </tbody>
