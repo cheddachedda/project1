@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Mono&display=swap');
 
 body {
   background-color: #242430;
@@ -59,4 +59,9 @@ th, td {
   border: 0.1rem solid #4E6280;
   padding: 0.2rem 0.4rem;
   text-align: left;
+}
+
+.db-schema {
+  font-family: 'Noto Sans Mono', monospace;
+  font-size: 0.8rem;
 }
