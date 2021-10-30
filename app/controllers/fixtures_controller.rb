@@ -14,6 +14,7 @@ class FixturesController < ApplicationController
   end
 
   def show
+    @fixture = Fixture.find params[:id]
   end
 
   def edit

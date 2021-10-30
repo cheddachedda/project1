@@ -3,4 +3,5 @@
 
 <%= render 'pages/db_schema', :locals => { :model => Fixture } %>
 
-<%= render 'fixture_card' %>
+<h3>Fixture:</h3>
+<%= render 'fixture_card', :locals => { :fixture => @fixture } %>
