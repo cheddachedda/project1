@@ -10,6 +10,7 @@ class FixturesController < ApplicationController
   end
 
   def round
+    @fixtures = Fixture.where(round: params[:round])
   end
 
   def show

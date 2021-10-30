@@ -4,3 +4,7 @@
 <%= render 'fixtures_nav' %>
 
 <%= render 'pages/db_schema', :locals => { :model => Fixture } %>
+
+<% @fixtures.each do |fixture| %>
+  <%= render 'fixture_card', :locals => { :fixture => fixture } %>
+<% end %>
