@@ -7,10 +7,11 @@
     <% end %>
   </tr>
 
-  <% models = params[:id] ? locals[:model].where(id: params[:id]) : locals[:model].all %>
-
-  <%# Selects by params[:round] in Fixtures#round %>
+  <%# Selects models by params[:round] in Fixtures#round %>
   <% models = locals[:model].where(round: params[:round]) if params[:round] %>
+
+  <%# Selects models by id %>
+  <% models = params[:id] ? locals[:model].where(id: params[:id]) : locals[:model].all %>
 
   <% models.each do |model| %>
     <tr>
