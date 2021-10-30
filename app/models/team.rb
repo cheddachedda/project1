@@ -92,4 +92,18 @@ class Team < ApplicationRecord
   def rank
     # TODO: Get ladder position
   end
+
+  def result fixture
+    if fixture.win? self
+      'W'
+    elsif fixture.loss? self
+      'L'
+    elsif fixture.draw?
+      'D'
+    end
+  end
+
+  def results
+    self.fixtures.map{ |f| self.result f }
+  end
 end
