@@ -6,29 +6,50 @@
 
   <% unless fixture.status == 'BYE' %>
 
-      <th colspan="3">
-        <%= fixture.date %> • <%= fixture.status %> • <%= fixture.venue %>
-      </th>
+      <thead>
+        <tr>
+          <th colspan="3">
+            <%= fixture.date %> • <%= fixture.status %> • <%= fixture.venue %>
+          </th>
+        </tr>
+      </thead>
 
-      <tr>
-        <td><%= home.name %></td>
-        <td><%= home.record %></td>
-        <td><%= fixture.home_score %></td>
-      </tr>
+      <tbody>
 
-      <tr>
-        <td><%= away.name %></td>
-        <td><%= away.record %></td>
-        <td><%= fixture.away_score %></td>
-      </tr>
+        <tr>
+          <td><%= home.name %></td>
+          <td><%= home.record %></td>
+          <td><%= fixture.home_score %></td>
+        </tr>
+
+        <tr>
+          <td><%= away.name %></td>
+          <td><%= away.record %></td>
+          <td><%= fixture.away_score %></td>
+        </tr>
+
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="3"><%= link_to 'View' ,fixture_path(fixture.round, fixture.id) %></td>
+        </tr>
+      </tfoot>
 
   <% else %>
 
-      <tr>
-        <td><%= home.name %></td>
-        <td><%= home.record %></td>
-        <td><%= fixture.status %></td>
-      </tr>
+      <thead>
+        <tr>
+          <th colspan="2"><%= fixture.status %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= home.name %></td>
+          <td><%= home.record %></td>
+        </tr>
+      </tbody>
 
   <% end %>
 
