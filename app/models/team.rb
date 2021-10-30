@@ -69,6 +69,10 @@ class Team < ApplicationRecord
     self.home_losses + self.away_losses
   end
 
+  def record
+    "#{ self.wins }-#{ self.losses }#{ "-#{self.draws}" if self.draws > 0 }"
+  end
+
   def goals_for
     self.home_goals_for + self.away_goals_for
   end
