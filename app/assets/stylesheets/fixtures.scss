@@ -9,22 +9,21 @@
   justify-content: space-around;
 }
 
-.fixtures-nav > button {
+.fixtures-nav > a {
   background-color: #DADADA;
   border: none;
   border-radius: 0.2rem;
   color: #242430;
   cursor: pointer;
   font-weight: bold;
-  font-size: 1rem;
-  height: 2rem;
-  width: 2.5rem;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
 }
 
 .fixtures-nav > .current {
   background-color: #FFEF6B;
 }
 
-.fixtures-nav > button:hover, .fixtures-nav > button:active {
+.fixtures-nav > a:hover, .fixtures-nav > a:active {
   background-color: #FE8BB5;
 }
