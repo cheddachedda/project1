@@ -18,6 +18,7 @@
 
  body {
    background-color: #242430;
+   box-sizing: border-box;
    color: #DADADA;
    font-family: 'Noto Sans', sans-serif;
    margin: 0 auto;
