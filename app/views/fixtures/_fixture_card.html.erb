@@ -1,0 +1,21 @@
+<% fixture = Fixture.find params[:id] %>
+<% home = Team.find_by(name: fixture.home) %>
+<% away = Team.find_by(name: fixture.away) %>
+
+<table id="fixture-<%= fixture.id %>">
+  <th colspan="3">
+    <%= fixture.date %> • <%= fixture.status %> • <%= fixture.venue %>
+  </th>
+
+  <tr>
+    <td><%= home.name %></td>
+    <td><%= home.record %></td>
+    <td><%= fixture.home_score %></td>
+  </tr>
+
+  <tr>
+    <td><%= away.name %></td>
+    <td><%= away.record %></td>
+    <td><%= fixture.away_score %></td>
+  </tr>
+</table>
