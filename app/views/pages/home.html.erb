@@ -8,7 +8,7 @@
     <th>Path</th>
   </tr>
 
-  <% @models.each do |model| %>
+  <% get_all_models.each do |model| %>
     <tr>
       <td><%= model %></td>
       <td><%= link_to "/#{model.downcase}s", "/#{model.downcase}s" %></td>
