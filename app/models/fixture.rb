@@ -22,7 +22,7 @@ class Fixture < ApplicationRecord
   end
 
   def draw?
-    self.home_score == self.away_score
+    self.home_score == self.away_score && self.status == 'COMPLETED'
   end
 
   def win? team
