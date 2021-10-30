@@ -1,6 +1,8 @@
 <div class="fixtures-nav">
   <% Fixture.pluck(:round).uniq.each do |round| %>
-    <button action="<%= round_path(round) %>">
+    <button
+      action="<%= round_path(round) %>"
+      class="<%= "current" if round == params[:round] %>">
       <%= round %>
     </button>
   <% end %>
