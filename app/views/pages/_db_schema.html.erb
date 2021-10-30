@@ -8,6 +8,10 @@
   </tr>
 
   <% models = params[:id] ? locals[:model].where(id: params[:id]) : locals[:model].all %>
+
+  <%# Selects by params[:round] in Fixtures#round %>
+  <% models = locals[:model].where(round: params[:round]) if params[:round] %>
+
   <% models.each do |model| %>
     <tr>
       <% locals[:model].column_names.each do |col| %>
