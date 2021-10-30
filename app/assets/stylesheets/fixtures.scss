@@ -1,3 +1,23 @@
 // Place all the styles related to the Fixtures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.fixtures-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.fixtures-nav > button {
+  background-color: #FFEF6B;
+  border: 0.2rem solid black;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  height: 2rem;
+  width: 2.5rem;
+}
+
+.fixtures-nav > button:hover, .fixtures-nav > button:active {
+  background-color: #FE8BB5;
+}
