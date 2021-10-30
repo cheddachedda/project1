@@ -30,11 +30,15 @@
 
       </tbody>
 
-      <tfoot>
-        <tr>
-          <td colspan="3"><%= link_to 'View' ,fixture_path(fixture.round, fixture.id) %></td>
-        </tr>
-      </tfoot>
+      <% unless params[:id] %>
+
+        <tfoot>
+          <tr>
+            <td colspan="3"><%= link_to 'View' ,fixture_path(fixture.round, fixture.id) %></td>
+          </tr>
+        </tfoot>
+        
+      <% end %>
 
   <% else %>
 
