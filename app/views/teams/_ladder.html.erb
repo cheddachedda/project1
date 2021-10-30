@@ -12,6 +12,7 @@
     <th>A</th>
     <th>%</th>
     <th>W%</th>
+    <th colspan="5">Form</th>
   </tr>
 
 
@@ -28,6 +29,9 @@
       <td><%= team.goals_against %></td>
       <td><%= team.goal_percentage %></td>
       <td><%= team.win_percentage %></td>
+      <% team.results.last(5).each do |result| %>
+        <td><%= result %></td>
+      <% end %>
     </tr>
   <% end %>
 
