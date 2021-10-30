@@ -17,13 +17,13 @@
       <tbody>
 
         <tr>
-          <td><%= home.name %></td>
+          <td><%= link_to home.name, team_path(home.id) %></td>
           <td><%= home.record %></td>
           <td><%= fixture.home_score %></td>
         </tr>
 
         <tr>
-          <td><%= away.name %></td>
+          <td><%= link_to away.name, team_path(away.id) %></td>
           <td><%= away.record %></td>
           <td><%= fixture.away_score %></td>
         </tr>
@@ -34,7 +34,7 @@
 
         <tfoot>
           <tr>
-            <td colspan="3"><%= link_to 'View' ,fixture_path(fixture.round, fixture.id) %></td>
+            <td colspan="3"><%= link_to '>> View Fixture' ,fixture_path(fixture.round, fixture.id) %></td>
           </tr>
         </tfoot>
 
