@@ -2,34 +2,34 @@
 <% home = Team.find_by(name: fixture.home) %>
 <% away = Team.find_by(name: fixture.away) %>
 
-<% unless fixture.status == 'BYE' %>
+<table class="fixture-card" id="fixture-<%= fixture.id %>">
 
-  <table id="fixture-<%= fixture.id %>">
-    <th colspan="3">
-      <%= fixture.date %> • <%= fixture.status %> • <%= fixture.venue %>
-    </th>
+  <% unless fixture.status == 'BYE' %>
 
-    <tr>
-      <td><%= home.name %></td>
-      <td><%= home.record %></td>
-      <td><%= fixture.home_score %></td>
-    </tr>
+      <th colspan="3">
+        <%= fixture.date %> • <%= fixture.status %> • <%= fixture.venue %>
+      </th>
 
-    <tr>
-      <td><%= away.name %></td>
-      <td><%= away.record %></td>
-      <td><%= fixture.away_score %></td>
-    </tr>
-  </table>
+      <tr>
+        <td><%= home.name %></td>
+        <td><%= home.record %></td>
+        <td><%= fixture.home_score %></td>
+      </tr>
 
-<% else %>
+      <tr>
+        <td><%= away.name %></td>
+        <td><%= away.record %></td>
+        <td><%= fixture.away_score %></td>
+      </tr>
 
-  <table id="fixture-<%= fixture.id %>">
-    <tr>
-      <td><%= home.name %></td>
-      <td><%= home.record %></td>
-      <td><%= fixture.status %></td>
-    </tr>
-  </table>
+  <% else %>
 
-<% end %>
+      <tr>
+        <td><%= home.name %></td>
+        <td><%= home.record %></td>
+        <td><%= fixture.status %></td>
+      </tr>
+
+  <% end %>
+
+</table>
