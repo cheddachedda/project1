@@ -90,7 +90,9 @@ class Team < ApplicationRecord
   end
 
   def rank
-    # TODO: Get ladder position
+    # TODO: figure out how to import TeamsHelper...sort_for_ladder
+    ladder = Team.all.sort_by{|t| [ t.win_percentage, t.goal_percentage, t.goals_for ]}.reverse
+    ladder.index(self) + 1
   end
 
   def result fixture
