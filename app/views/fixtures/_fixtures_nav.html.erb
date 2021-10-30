@@ -2,7 +2,7 @@
   <% Fixture.pluck(:round).uniq.each do |round| %>
     <button
       action="<%= round_path(round) %>"
-      class="<%= "current" if round == params[:round] %>">
+      class="<%= "selected" if round == params[:round] %>">
       <%= round %>
     </button>
   <% end %>
